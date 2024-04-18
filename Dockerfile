@@ -30,7 +30,7 @@ RUN make cache-bust
 RUN cargo build --release
 
 FROM debian:bookworm as mCaptcha
-LABEL org.opencontainers.image.source https://github.com/mCaptcha/mCaptcha
+LABEL org.opencontainers.image.source https://github.com/sudhz/mCaptcha
 RUN set -ex; \
     apt-get update; \
     DEBIAN_FRONTEND=noninteractive \
