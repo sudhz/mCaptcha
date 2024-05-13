@@ -20,7 +20,7 @@ services:
     volumes:
       - mcaptcha-data:/var/lib/postgresql/
     environment:
-      POSTGRES_PASSWORD: password # change password
+      POSTGRES_PASSWORD: dayforce # change password
       PGDATA: /var/lib/postgresql/data/mcaptcha/
 
   mcaptcha_redis:

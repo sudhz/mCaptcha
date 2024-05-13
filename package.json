@@ -10,6 +10,8 @@
     "test": "jest"
   },
   "devDependencies": {
+    "@babel/core": "^7.24.5",
+    "@babel/preset-env": "^7.24.5",
     "@types/jest": "^29.5.6",
     "@types/jsdom": "^21.1.4",
     "@types/node": "^20.8.9",
@@ -17,6 +19,7 @@
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
     "@wasm-tool/wasm-pack-plugin": "^1.7.0",
+    "babel-loader": "^9.1.3",
     "css-loader": "^6.8.1",
     "css-minimizer-webpack-plugin": "^5.0.1",
     "eslint": "^8.52.0",
@@ -37,8 +40,9 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "@mcaptcha/pow-wasm": "^0.1.0-rc2",
     "@mcaptcha/pow_sha256-polyfill": "^0.1.0-rc2",
     "@mcaptcha/vanilla-glue": "^0.1.0-rc1",
-    "@mcaptcha/pow-wasm": "^0.1.0-rc2"
+    "util": "^0.12.5"
   }
 }

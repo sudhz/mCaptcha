@@ -655,6 +655,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "cache-bust"
+version = "0.1.0"
+dependencies = [
+ "libcachebust",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "cc"
 version = "1.0.79"
 source = "registry+https://github.com/rust-lang/crates.io-index"

@@ -86,7 +86,7 @@ check: ## Check for syntax errors on all workspaces
 	cd db/db-core/ && cargo check
 
 cache-bust: ## Run cache buster on static assets
-	$(call cache_bust)
+	export GIT_SSL_NO_VERIFY=true && $(call cache_bust)
 
 clean: ## Delete build artifacts
 	@cargo clean
@@ -140,8 +140,14 @@ frontend: ## Build frontend
 	@yarn run sass -s \
 		compressed templates/widget/main.scss  \
 		./static/cache/bundle/css/widget.css
-	@./scripts/librejs.sh
-	@./scripts/cachebust.sh
+	tr -d '\r\t' < ./scripts/librejs.sh > temp && mv temp ./scripts/librejs.sh
+	tr -d '\r\t' < ./scripts/lib.sh > temp && mv temp ./scripts/lib.sh
+	tr -d '\r\t' < ./scripts/cachebust.sh > temp && mv temp ./scripts/cachebust.sh
+	tr -d '\r\t' < ./scripts/integration.sh > temp && mv temp ./scripts/integration.sh
+	tr -d '\r\t' < ./scripts/publish.sh > temp && mv temp ./scripts/publish.sh
+	tr -d '\r\t' < ./scripts/tests.sh > temp && mv temp ./scripts/tests.sh
+	@bash ./scripts/librejs.sh
+	@bash ./scripts/cachebust.sh
 
 lint: ## Lint codebase
 	cargo fmt -v --all -- --emit files

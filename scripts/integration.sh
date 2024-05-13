@@ -31,12 +31,12 @@ git clone https://github.com/mCaptcha/integration .
 
 if is_ci
 then
-	yarn install
-	xvfb-run --auto-servernum npm run test.firefox
-	xvfb-run --auto-servernum npm run test.chrome
+yarn install
+xvfb-run --auto-servernum npm run test.firefox
+xvfb-run --auto-servernum npm run test.chrome
 else
-	yarn install
-	npx nightwatch ./test/mCaptcha.ts
+yarn install
+npx nightwatch ./test/mCaptcha.ts
 fi
 
 cd $PROJECT_ROOT

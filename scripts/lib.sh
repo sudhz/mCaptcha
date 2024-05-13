@@ -22,5 +22,5 @@ msg() {
 }
 
 get_file_name() {
-	basename -- $1
+basename -- $1
 }

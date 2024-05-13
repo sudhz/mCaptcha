@@ -15,8 +15,8 @@ build = "build.rs"
 
 
 [workspace]
-exclude = ["db/db-migrations", "utils/cache-bust"]
-memebers = [".", "db/db-core", "db/db-sqlx-postgres", "db/db-sqlx-maria"]
+exclude = ["db/db-migrations"]
+members = [".", "db/db-core", "db/db-sqlx-postgres", "db/db-sqlx-maria", "utils/cache-bust"]
 
 [[bin]]
 name = "mcaptcha"
